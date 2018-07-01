@@ -31,7 +31,7 @@ public class LoginUsuarioActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else {
-                    Toast.makeText(getApplicationContext(),"Email ou senha incorretos",Toast.LENGTH_LONG);
+                    Toast.makeText(getApplicationContext(),"Email ou senha incorretos",Toast.LENGTH_LONG).show();
                 }
             }
         });
