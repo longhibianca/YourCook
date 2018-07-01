@@ -13,6 +13,7 @@ public class FiltroActivity extends AppCompatActivity {
 
     TextView cadCatIngred;
     Button btnBuscarReceita;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
