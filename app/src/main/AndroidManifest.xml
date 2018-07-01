@@ -22,6 +22,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoginUsuarioActivity" />
         <activity android:name=".CadastrarUsuarioActivity" />
+        <activity android:name=".FiltroActivity"></activity>
     </application>
 
 </manifest>
