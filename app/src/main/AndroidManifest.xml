@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ListagemRefeicoesActivity"
+            android:label="@string/title_activity_listagem_refeicoes"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".LoginUsuarioActivity" />
+        <activity android:name=".CadastrarUsuarioActivity"></activity>
     </application>
 
 </manifest>

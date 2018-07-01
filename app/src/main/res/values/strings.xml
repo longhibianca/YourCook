@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">YourCook</string>
+    <string name="title_activity_listagem_refeicoes">ListagemRefeicoesActivity</string>
 </resources>
