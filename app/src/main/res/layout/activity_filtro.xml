@@ -27,29 +27,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvCadCatIngrediente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="12dp"
-        android:clickable="true"
-        android:onClick="onClick"
-        android:text="Cadastre uma nova categoria"
-        android:textColor="#4169E1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sCatIngredientes" />
-
     <Button
         android:id="@+id/btnBuscarReceita"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:text="Buscar Receitas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabCadCatIngrediente"
+        android:layout_width="46dp"
+        android:layout_height="47dp"
+        android:clickable="true"
+        app:backgroundTint="@android:color/holo_orange_dark"
+        app:srcCompat="@android:drawable/ic_menu_add"
+        tools:layout_editor_absoluteX="306dp"
+        tools:layout_editor_absoluteY="415dp" />
 
 </android.support.constraint.ConstraintLayout>
