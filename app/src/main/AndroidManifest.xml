@@ -23,7 +23,8 @@
         <activity android:name=".LoginUsuarioActivity" />
         <activity android:name=".CadastrarUsuarioActivity" />
         <activity android:name=".FiltroActivity" />
-        <activity android:name=".CadastrarCatIngredienteActivity"></activity>
+        <activity android:name=".CadastrarCatIngredienteActivity" />
+        <activity android:name=".CadastrarIngredienteActivity"></activity>
     </application>
 
 </manifest>

@@ -40,13 +40,28 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabCadCatIngrediente"
-        android:layout_width="46dp"
-        android:layout_height="47dp"
+        android:id="@+id/fabCadIngrediente"
         android:clickable="true"
         app:backgroundTint="@android:color/holo_orange_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_menu_add"
-        tools:layout_editor_absoluteX="306dp"
-        tools:layout_editor_absoluteY="415dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"/>
+
+    <TextView
+        android:id="@+id/tvCadCatIngrediente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="10dp"
+        android:text="Cadastrar nova categoria de ingrediente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sCatIngredientes"
+        android:textColor="#4169E1"
+        android:onClick="onClick"
+        android:clickable="true" />
 
 </android.support.constraint.ConstraintLayout>
