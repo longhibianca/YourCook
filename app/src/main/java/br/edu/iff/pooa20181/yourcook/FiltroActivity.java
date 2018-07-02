@@ -79,7 +79,7 @@ public class FiltroActivity extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(FiltroActivity.this,ListagemIngredientesActivity.class);
-                //intent.putExtra("categoria",item);
+                intent.putExtra("categoria",item);
                 startActivity(intent);
             }
         });
@@ -88,42 +88,10 @@ public class FiltroActivity extends AppCompatActivity implements AdapterView.OnI
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-       // HashMap<CheckBox, String> checkBoxMap = new HashMap<>();
+       // pega o valor selecionado no spinner
         item = parent.getItemAtPosition(position).toString();
 
-        //traz todos os valores onde a categoria do ingrediente é a que foi selecionada
-       /*RealmResults<Ingrediente> realmResults = realm.where(Ingrediente.class).equalTo("categoria", item).findAll();
-        List<Ingrediente> ingredientes = realm.copyFromRealm(realmResults);
 
-
-        CheckBoxGroup<String> checkBoxGroup = new CheckBoxGroup<>(checkBoxMap,
-                new CheckBoxGroup.CheckedChangeListener<String>() {
-                    @Override
-                    public void onCheckedChange(ArrayList<String> values) {
-
-                    }
-
-                });
-
-        //criando layout linear
-        LinearLayout anotherLayout = new LinearLayout(this);
-        LinearLayout.LayoutParams linearLayoutParams =
-                new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT);
-
-
-        List<String> strings = new ArrayList<>(ingredientes.size());
-        List<CheckBox> cbs = new ArrayList<>(ingredientes.size());
-        for (Ingrediente ingrediente : ingredientes) {
-            strings.add(ingrediente != null ? ingrediente.getNomeIngrediente().toString() : null);
-
-            cbs.add(strings);
-            cbs.setText(ingrediente.getNomeIngrediente().toString());
-            anotherLayout.addView(cbs);
-            addContentView(anotherLayout, linearLayoutParams);
-        }
-*/
 
     }
     public void onNothingSelected(AdapterView<?> arg0) {
