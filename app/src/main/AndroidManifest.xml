@@ -25,7 +25,12 @@
         <activity android:name=".CadastrarUsuarioActivity" />
         <activity android:name=".FiltroActivity" />
         <activity android:name=".CadastrarCatIngredienteActivity" />
-        <activity android:name=".CadastrarIngredienteActivity"></activity>
+        <activity android:name=".CadastrarIngredienteActivity" />
+        <activity
+            android:name=".ListagemIngredientesActivity"
+            android:label="@string/title_activity_listagem_ingredientes"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ItemIngredienteActivity"></activity>
     </application>
 
 </manifest>
