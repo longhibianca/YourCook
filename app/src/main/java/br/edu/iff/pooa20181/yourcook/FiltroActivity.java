@@ -45,6 +45,7 @@ public class FiltroActivity extends AppCompatActivity implements AdapterView.OnI
 
         spinnerCategoria.setOnItemSelectedListener(this);
 
+        //preencher spinner com valor do banco
         RealmResults<CategoriaIngrediente> realmResults = realm.where(CategoriaIngrediente.class).findAll();
         List<CategoriaIngrediente> categorias = realm.copyFromRealm(realmResults);
 
