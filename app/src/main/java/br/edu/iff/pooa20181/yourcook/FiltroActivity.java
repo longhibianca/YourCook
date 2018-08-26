@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.xeoh.android.checkboxgroup.CheckBoxGroup;
 
@@ -23,16 +25,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import br.edu.iff.pooa20181.yourcook.adapter.iRetroFitTaco;
 import br.edu.iff.pooa20181.yourcook.model.CategoriaIngrediente;
 import br.edu.iff.pooa20181.yourcook.model.Ingrediente;
 import io.realm.Realm;
 import io.realm.RealmResults;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FiltroActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     TextView cadCatIngred;
     Button btnBuscarIngredientes;
     Spinner spinnerCategoria;
+    //List<CategoriaIngrediente> categorias;
 
     String item = "";
     private Realm realm;
@@ -54,6 +61,22 @@ public class FiltroActivity extends AppCompatActivity implements AdapterView.OnI
         RealmResults<CategoriaIngrediente> realmResults = realm.where(CategoriaIngrediente.class).findAll();
         List<CategoriaIngrediente> categorias = realm.copyFromRealm(realmResults);
 
+        /*INICIA AQUI O USO DO RETROFIT*/
+        /*iRetroFitTaco catTaco = iRetroFitTaco.retrofit.create(iRetroFitTaco.class);
+        final Call<List<CategoriaIngrediente>> call = catTaco.getCategorias();*/
+        /*call.enqueue(new Callback<List<CategoriaIngrediente>>() {
+            @Override
+            public void onResponse(Call<List<CategoriaIngrediente>> call, Response<List<CategoriaIngrediente>> response) {
+                categorias = response.body();
+            }
+            @Override
+            public void onFailure(Call<List<CategoriaIngrediente>> call, Throwable t) {
+
+                Toast.makeText(getBaseContext(),"Falha ao pegar categorias : ",Toast.LENGTH_LONG).show();
+            }
+        });
+*/
+        //USARIA O ATRIBUTO CATEGORIAS DO ONRESPONSE PARA MOSTRAR AS CATEGORIAS NO ADAPTER
         List<String> strings = new ArrayList<>(categorias.size());
         for (CategoriaIngrediente cat : categorias) {
             strings.add(cat != null ? cat.getNomeCategoria().toString() : null);

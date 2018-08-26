@@ -12,7 +12,7 @@ import retrofit2.http.Path;
 public interface iRetroFitTaco {
 
     @GET("/categorias")
-    Call<List<CategoriaIngrediente>> getCategorias(@Path("categoria") String categoria);
+    Call<List<CategoriaIngrediente>> getCategorias();
 
     public static final Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("https://taco-alimentos.herokuapp.com")

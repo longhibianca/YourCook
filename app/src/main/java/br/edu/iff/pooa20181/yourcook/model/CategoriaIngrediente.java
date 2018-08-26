@@ -5,8 +5,8 @@ import java.io.Serializable;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
-public class CategoriaIngrediente /* extends RealmObject implements Serializable*/ {
-/*
+public class CategoriaIngrediente extends RealmObject implements Serializable {
+
     @PrimaryKey
     private int id;
     private String nomeCategoria;
@@ -44,8 +44,8 @@ public class CategoriaIngrediente /* extends RealmObject implements Serializable
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-*/
-    int _id;
+
+   /* int _id;
     String categoria;
 
     public int get_id() {
@@ -62,5 +62,5 @@ public class CategoriaIngrediente /* extends RealmObject implements Serializable
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
-    }
+    } */
 }

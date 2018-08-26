@@ -4,6 +4,7 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,16 +15,21 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.edu.iff.pooa20181.yourcook.adapter.iRetroFitTaco;
 import br.edu.iff.pooa20181.yourcook.model.CategoriaIngrediente;
 import br.edu.iff.pooa20181.yourcook.model.Ingrediente;
 import io.realm.Realm;
 import io.realm.RealmResults;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class CadastrarIngredienteActivity extends AppCompatActivity {
 
     Button btnSalvar;
     Spinner spinnerCategoria ;
     EditText nomeIngrediente;
+    //List<CategoriaIngrediente> categorias;
 
     private Realm realm;
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -43,7 +49,24 @@ public class CadastrarIngredienteActivity extends AppCompatActivity {
         RealmResults<CategoriaIngrediente> realmResults = realm.where(CategoriaIngrediente.class).findAll();
         List<CategoriaIngrediente> categorias = realm.copyFromRealm(realmResults);
 
+        /*INICIA AQUI O USO DO RETROFIT*/
+        /*iRetroFitTaco catTaco = iRetroFitTaco.retrofit.create(iRetroFitTaco.class);
+        final Call<List<CategoriaIngrediente>> call = catTaco.getCategorias();*/
+        /*call.enqueue(new Callback<List<CategoriaIngrediente>>() {
+            @Override
+            public void onResponse(Call<List<CategoriaIngrediente>> call, Response<List<CategoriaIngrediente>> response) {
+                categorias = response.body();
+            }
+            @Override
+            public void onFailure(Call<List<CategoriaIngrediente>> call, Throwable t) {
+
+                Toast.makeText(getBaseContext(),"Falha ao pegar categorias : ",Toast.LENGTH_LONG).show();
+            }
+        });*/
+
+        //USARIA O ATRIBUTO CATEGORIAS DO ONRESPONSE PARA MOSTRAR AS CATEGORIAS NO ADAPTER
         List<String> strings = new ArrayList<>(categorias.size());
+
         for (CategoriaIngrediente cat : categorias) {
             strings.add(cat != null ? cat.getNomeCategoria().toString() : null);
         }
