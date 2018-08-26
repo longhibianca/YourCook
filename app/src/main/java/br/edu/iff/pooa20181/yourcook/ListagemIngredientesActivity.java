@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -107,17 +108,25 @@ public class ListagemIngredientesActivity extends AppCompatActivity {
 
         List<ItemIngredienteDTO> ret = new ArrayList<ItemIngredienteDTO>();
 
-        //itera na string para preencher a lista de checkbox da view
-        for(String s : strings)
+        if(strings.isEmpty())
         {
-            String itemText = s;
-
-            ItemIngredienteDTO dto = new ItemIngredienteDTO();
-            dto.setChecked(false);
-            dto.setItemText(itemText);
-
-            ret.add(dto);
+            Toast.makeText(getApplicationContext(),"Não há ingredientes nesta categoria",Toast.LENGTH_LONG).show();
         }
+        else
+        {
+            //itera na string para preencher a lista de checkbox da view
+            for(String s : strings)
+            {
+                String itemText = s;
+
+                ItemIngredienteDTO dto = new ItemIngredienteDTO();
+                dto.setChecked(false);
+                dto.setItemText(itemText);
+
+                ret.add(dto);
+            }
+        }
+
 
         return ret;
     }
