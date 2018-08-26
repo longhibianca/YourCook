@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
@@ -48,5 +49,22 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         googleSignInClient = GoogleSignIn.getClient(this, gso);
+    }
+
+    protected void onStart() {
+
+        super.onStart();
+
+        //checa se o usuario já logou no app antes com a conta da google
+        //retorna nulo se não logado
+        GoogleSignInAccount conta = GoogleSignIn.getLastSignedInAccount(this);
+
+
+        //se o usuario está logado, redireciona para a app
+        if(conta != null)
+        {
+            Intent intent = new Intent(MainActivity.this,FiltroActivity.class);
+            startActivity(intent);
+        }
     }
 }
