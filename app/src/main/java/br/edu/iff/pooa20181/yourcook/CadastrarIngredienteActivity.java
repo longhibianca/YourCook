@@ -15,6 +15,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.edu.iff.pooa20181.yourcook.adapter.CategoriaRetrofit;
 import br.edu.iff.pooa20181.yourcook.adapter.iRetroFitTaco;
 import br.edu.iff.pooa20181.yourcook.model.CategoriaIngrediente;
 import br.edu.iff.pooa20181.yourcook.model.Ingrediente;
@@ -50,8 +51,9 @@ public class CadastrarIngredienteActivity extends AppCompatActivity {
         List<CategoriaIngrediente> categorias = realm.copyFromRealm(realmResults);
 
         /*INICIA AQUI O USO DO RETROFIT*/
-        /*iRetroFitTaco catTaco = iRetroFitTaco.retrofit.create(iRetroFitTaco.class);
-        final Call<List<CategoriaIngrediente>> call = catTaco.getCategorias();*/
+        //iRetroFitTaco catTaco = iRetroFitTaco.retrofit.create(iRetroFitTaco.class);
+       // Call<List<CategoriaIngrediente>> call = new CategoriaRetrofit().getCategoriaService().buscarCategorias();
+        //final Call<List<CategoriaIngrediente>> call = catTaco.getCategorias();
         /*call.enqueue(new Callback<List<CategoriaIngrediente>>() {
             @Override
             public void onResponse(Call<List<CategoriaIngrediente>> call, Response<List<CategoriaIngrediente>> response) {
@@ -62,8 +64,8 @@ public class CadastrarIngredienteActivity extends AppCompatActivity {
 
                 Toast.makeText(getBaseContext(),"Falha ao pegar categorias : ",Toast.LENGTH_LONG).show();
             }
-        });*/
-
+        });
+*/
         //USARIA O ATRIBUTO CATEGORIAS DO ONRESPONSE PARA MOSTRAR AS CATEGORIAS NO ADAPTER
         List<String> strings = new ArrayList<>(categorias.size());
 

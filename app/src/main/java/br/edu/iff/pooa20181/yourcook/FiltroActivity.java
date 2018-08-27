@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import br.edu.iff.pooa20181.yourcook.adapter.CategoriaRetrofit;
 import br.edu.iff.pooa20181.yourcook.adapter.iRetroFitTaco;
 import br.edu.iff.pooa20181.yourcook.model.CategoriaIngrediente;
 import br.edu.iff.pooa20181.yourcook.model.Ingrediente;
@@ -64,19 +65,27 @@ public class FiltroActivity extends AppCompatActivity implements AdapterView.OnI
         /*INICIA AQUI O USO DO RETROFIT*/
         /*iRetroFitTaco catTaco = iRetroFitTaco.retrofit.create(iRetroFitTaco.class);
         final Call<List<CategoriaIngrediente>> call = catTaco.getCategorias();*/
-        /*call.enqueue(new Callback<List<CategoriaIngrediente>>() {
+
+        //Log.i("[INFO CATEGORIAS] CAT:", String.valueOf(call));
+
+
+        //USARIA O ATRIBUTO CATEGORIAS DO ONRESPONSE PARA MOSTRAR AS CATEGORIAS NO ADAPTER
+       /* Call<List<CategoriaIngrediente>> call = new CategoriaRetrofit().getCategoriaService().buscarCategorias();
+
+        call.enqueue(new Callback<List<CategoriaIngrediente>>() {
             @Override
             public void onResponse(Call<List<CategoriaIngrediente>> call, Response<List<CategoriaIngrediente>> response) {
                 categorias = response.body();
+
+                for (CategoriaIngrediente categoria : categorias)
+                    Log.i("[INFO CATEGORIAS] CAT:", categoria.getCategoria());
             }
             @Override
             public void onFailure(Call<List<CategoriaIngrediente>> call, Throwable t) {
 
                 Toast.makeText(getBaseContext(),"Falha ao pegar categorias : ",Toast.LENGTH_LONG).show();
             }
-        });
-*/
-        //USARIA O ATRIBUTO CATEGORIAS DO ONRESPONSE PARA MOSTRAR AS CATEGORIAS NO ADAPTER
+        });*/
         List<String> strings = new ArrayList<>(categorias.size());
         for (CategoriaIngrediente cat : categorias) {
             strings.add(cat != null ? cat.getNomeCategoria().toString() : null);
@@ -113,8 +122,6 @@ public class FiltroActivity extends AppCompatActivity implements AdapterView.OnI
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
        // pega o valor selecionado no spinner
         item = parent.getItemAtPosition(position).toString();
-
-
 
     }
     public void onNothingSelected(AdapterView<?> arg0) {

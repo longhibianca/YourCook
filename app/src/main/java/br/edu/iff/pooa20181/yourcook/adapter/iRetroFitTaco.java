@@ -11,11 +11,13 @@ import retrofit2.http.Path;
 
 public interface iRetroFitTaco {
 
-    @GET("/categorias")
+    /*@GET("/categorias")
     Call<List<CategoriaIngrediente>> getCategorias();
 
     public static final Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("https://taco-alimentos.herokuapp.com")
             .addConverterFactory(GsonConverterFactory.create())
-            .build();
+            .build();*/
+    /*@GET("categorias/")
+    Call<List<CategoriaIngrediente>> buscarCategorias();*/
 }

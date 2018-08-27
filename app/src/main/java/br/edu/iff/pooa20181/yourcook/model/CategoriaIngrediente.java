@@ -45,7 +45,7 @@ public class CategoriaIngrediente extends RealmObject implements Serializable {
         this.descricao = descricao;
     }
 
-   /* int _id;
+  /*  int _id;
     String categoria;
 
     public int get_id() {
@@ -62,5 +62,5 @@ public class CategoriaIngrediente extends RealmObject implements Serializable {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
-    } */
+    }*/
 }

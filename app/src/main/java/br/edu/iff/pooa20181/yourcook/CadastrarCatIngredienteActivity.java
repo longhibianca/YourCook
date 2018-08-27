@@ -14,7 +14,7 @@ import io.realm.Realm;
 
 public class CadastrarCatIngredienteActivity extends AppCompatActivity {
 
-    /*EditText nomeCategoria, descricao;
+    EditText nomeCategoria, descricao;
     Button btnSalvar;
 
     private Realm realm;
@@ -74,5 +74,4 @@ public class CadastrarCatIngredienteActivity extends AppCompatActivity {
         categoria.setDescricao(descricao.getText().toString());
     }
 
-*/
 }
